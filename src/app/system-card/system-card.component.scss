@@ -1,0 +1,21 @@
+.system-up {
+  max-width: 400px;
+  display: inline-block;
+  background: #3fbd2b;
+  color: white;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.system-down {
+  max-width: 400px;
+  display: inline-block;
+  background: #be4e75;
+  color: white;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
