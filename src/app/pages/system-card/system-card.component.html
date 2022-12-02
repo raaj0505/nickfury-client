@@ -1,0 +1,21 @@
+<mat-card class="main-card">
+  <mat-card-header [ngClass]="{'system-up' : card.isUp, 'system-down':!card.isUp}">
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{card.name}}</mat-card-title>
+    <!--    <mat-card-subtitle>{{card.isUp ? 'Up & Running' : 'Down'}}</mat-card-subtitle>-->
+  </mat-card-header>
+  <!--  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+  <mat-card-content class="content">
+
+    {{card.isUp ? 'Running' : 'Down'}}
+  </mat-card-content>
+  <mat-divider></mat-divider>
+
+  <mat-card-footer>
+    <span >Last checked at: {{card.lastCheckedAt}}</span>
+    <button matTooltip="Refresh" mat-icon-button (click)="refresh()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </mat-card-footer>
+</mat-card>
+

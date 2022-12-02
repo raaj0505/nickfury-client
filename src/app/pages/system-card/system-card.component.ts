@@ -10,4 +10,7 @@ export class SystemCardComponent {
   @Input()
   card:any;
 
+  refresh() {
+
+  }
 }
