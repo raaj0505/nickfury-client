@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SystemsComponent } from './systems/systems.component';
 import { SystemCardComponent } from './system-card/system-card.component';
 import {MatCardModule} from "@angular/material/card";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {MatCardModule} from "@angular/material/card";
         MatDividerModule,
         MatCardModule,
     ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
