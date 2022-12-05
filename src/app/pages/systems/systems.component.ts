@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from "../../services/data-service/data.service";
+import {HealthDataService} from "../../services/health-data-service/health-data.service";
 
 @Component({
   selector: 'app-systems',
@@ -8,8 +9,8 @@ import {DataService} from "../../services/data-service/data.service";
 })
 export class SystemsComponent implements OnInit{
   cards: any[] = [];
-
-  constructor(private dataService: DataService) {
+  refresh:boolean = false;
+  constructor(private dataService: DataService, private healthData: HealthDataService) {
 
   }
 
@@ -24,4 +25,8 @@ export class SystemsComponent implements OnInit{
     }, error => console.log("error", error))
   }
 
+  refreshAll() {
+    this.healthData.pushAllHealthRefreshEvent(true);
+    setTimeout(()=> this.healthData.pushAllHealthRefreshEvent(false), 1000)
+  }
 }

@@ -1,1 +1,8 @@
+<div class="actions">
+  Refresh All <button matTooltip="Refresh" mat-icon-button (click)="refreshAll()">
+   <mat-icon>refresh</mat-icon>
+  </button>
+</div>
+<mat-divider></mat-divider>
+
 <app-system-card *ngFor="let card of cards" [card]="card"></app-system-card>

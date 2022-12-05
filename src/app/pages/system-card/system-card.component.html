@@ -1,5 +1,5 @@
 <mat-card class="main-card">
-  <mat-card-header [ngClass]="{'system-up' : card.isUp, 'system-down':!card.isUp}">
+  <mat-card-header class="heading"  [ngClass]="{'system-up' : card.isUp, 'system-down':!card.isUp}">
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{card.name}}</mat-card-title>
     <!--    <mat-card-subtitle>{{card.isUp ? 'Up & Running' : 'Down'}}</mat-card-subtitle>-->
@@ -8,14 +8,38 @@
   <mat-card-content class="content">
 
     {{card.isUp ? 'Running' : 'Down'}}
-  </mat-card-content>
-  <mat-divider></mat-divider>
 
-  <mat-card-footer>
+    <ul>
+      <li>
+        <ul class="kvpairs">
+          <li>SOme key</li>
+          <li>Some value</li>
+        </ul>
+      </li>
+      <li>
+        <ul class="kvpairs">
+          <li>SOme key</li>
+          <li>Some value</li>
+        </ul>
+      </li>
+      <li>
+        <ul class="kvpairs">
+          <li>SOme key</li>
+          <li>Some value</li>
+        </ul>
+      </li>
+    </ul>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+  <mat-card-footer *ngIf="!loading">
     <span >Last checked at: {{card.lastCheckedAt}}</span>
-    <button matTooltip="Refresh" mat-icon-button (click)="refresh()">
+    <button matTooltip="Refresh" mat-icon-button (click)="refreshStatus()">
       <mat-icon>refresh</mat-icon>
     </button>
+  </mat-card-footer>
+  <mat-card-footer *ngIf="loading">
+    <img class="loading1" src="https://ukutet.com/images/spinner.gif"/>
   </mat-card-footer>
 </mat-card>
 
