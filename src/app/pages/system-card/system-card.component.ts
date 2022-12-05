@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HealthDataService} from "../../services/health-data-service/health-data.service";
+import {GenericApiService} from "../../services/generic-api-service/generic-api.service";
 
 @Component({
   selector: 'app-system-card',
@@ -12,21 +13,36 @@ export class SystemCardComponent implements OnInit{
   card:any;
   loading: boolean = false;
 
-  constructor(private healthDataObj: HealthDataService) {
+  constructor(private healthDataObj: HealthDataService, private api: GenericApiService) {
   }
 
   ngOnInit(): void {
     this.healthDataObj.allHealthRefreshEvent.subscribe(toRefresh => {
       if(toRefresh) {
-        this.refreshStatus();
+        this.refreshStatus(this.card);
       }
     })
 
+    this.refreshStatus(this.card);
+
   }
 
-  refreshStatus() {
+  refreshStatus(card:any) {
     this.loading = true;
-    setTimeout(()=> this.loading = false, 1000)
+    this.refreshSingleSystem(card)
+  }
+
+  refreshSingleSystem(card:any) {
+    this.api.get(card.healthCheckUrl).subscribe((res:any) => {
+      this.loading = false;
+      console.log(res);
+      card.branch = res.git.branch;
+    }, err=> {
+      card.branch = "Error"
+      this.loading = false;
+      console.log(err)
+    })
+
   }
 
 

@@ -39,3 +39,17 @@ ul{
   height: 35px;
   width: 35px;
 }
+dl {
+  display: table;
+}
+dl > div {
+  display: table-row;
+}
+dl > div > dt, dl > div > dd {
+  display: table-cell;
+  border: 1px solid black;
+  padding: 0.1em;
+}
+dl > div > dt {
+  font-weight: bold;
+}
