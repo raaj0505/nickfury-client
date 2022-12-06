@@ -1,7 +1,7 @@
 <mat-card class="main-card">
   <mat-card-header class="heading"  [ngClass]="{'system-up' : card.isUp, 'system-down':!card.isUp}">
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title class="subtitle">{{card.name}}</mat-card-title>
+    <mat-card-title class="subtitle" (click)="launchApp(card)">{{card.name}}</mat-card-title>
     <!--    <mat-card-subtitle>{{card.isUp ? 'Up & Running' : 'Down'}}</mat-card-subtitle>-->
   </mat-card-header>
   <!--  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->

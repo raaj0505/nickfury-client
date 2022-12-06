@@ -13,7 +13,8 @@ export class SystemCardComponent implements OnInit{
   card:any;
   loading: boolean = false;
 
-  constructor(private healthDataObj: HealthDataService, private api: GenericApiService) {
+  constructor(private healthDataObj: HealthDataService,
+              private api: GenericApiService) {
   }
 
   ngOnInit(): void {
@@ -46,4 +47,7 @@ export class SystemCardComponent implements OnInit{
   }
 
 
+  launchApp(card: any) {
+    window.open(card.siteUrl)
+  }
 }
