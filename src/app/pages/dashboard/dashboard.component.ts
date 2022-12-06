@@ -12,14 +12,10 @@ export class DashboardComponent {
   }
 
   goTo(s: string) {
-    if(s === '') {
+    if(s) {
+      this.router.navigate(['all-systems'], {queryParams:{status:s}})
+    } else{
       this.router.navigate(['all-systems'])
-    }
-    else if(s === 'up') {
-      this.router.navigate(['all-systems'], {queryParams:{status:'up'}})
-    }
-    else if(s === 'down') {
-      this.router.navigate(['all-systems'],{queryParams:{status:'down'}})
     }
 
   }

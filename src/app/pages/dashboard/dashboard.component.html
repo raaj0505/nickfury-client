@@ -2,21 +2,21 @@
   <h1>Admin UI</h1>
 </main>
 <ul>
-  <li class="card" (click)="goTo('down')">
+  <li class="card system-all" (click)="goTo('')">
     <div class="card__flipper">
       <div class="card__front">
-        <p class="card__name"><span>Systems</span><br>Down</p>
-        <p class="card__num">2</p>
+        <p class="card__name"><span>Systems</span><br>Unique</p>
+        <p class="card__num">11</p>
       </div>
       <div class="card__back">
         <svg height="180" width="180">
-          <circle cx="90" cy="90" r="55" stroke="#db6623" stroke-width="35"  />
+          <circle cx="90" cy="90" r="55" stroke="#bdb235" stroke-width="35"  />
         </svg>
-        <span>101.5</span>
+        <span>103.3</span>
       </div>
     </div>
   </li>
-  <li class="card" (click)="goTo('up')">
+  <li class="card system-up" (click)="goTo('up')">
     <div class="card__flipper">
       <div class="card__front">
         <p class="card__name"><span>Systems</span><br>Up & Running</p>
@@ -30,17 +30,17 @@
       </div>
     </div>
   </li>
-  <li class="card" (click)="goTo('')">
+  <li class="card system-down" (click)="goTo('down')">
     <div class="card__flipper">
       <div class="card__front">
-        <p class="card__name"><span>Systems</span><br>Unique</p>
-        <p class="card__num">11</p>
+        <p class="card__name"><span>Systems</span><br>Down</p>
+        <p class="card__num">2</p>
       </div>
       <div class="card__back">
         <svg height="180" width="180">
-          <circle cx="90" cy="90" r="55" stroke="#bdb235" stroke-width="35"  />
+          <circle cx="90" cy="90" r="55" stroke="#db6623" stroke-width="35"  />
         </svg>
-        <span>103.3</span>
+        <span>101.5</span>
       </div>
     </div>
   </li>

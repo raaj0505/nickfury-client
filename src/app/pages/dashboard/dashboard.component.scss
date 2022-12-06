@@ -60,68 +60,6 @@ ul {
   margin: 0 30px 30px 0;
   perspective: 1000;
 
-  &:first-child {
-    .card__front {
-      background: $color1;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color1, 15%),$color1,100, 0.8);
-    }
-  }
-
-  &:nth-child(1) {
-    .card__front {
-      background: $color4;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color4, 15%),$color4,100, 0.8);
-    }
-  }
-
-  &:nth-child(2) {
-    .card__front {
-      background: $color2;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
-    }
-  }
-
-  &:nth-child(3) {
-    margin-right: 0;
-    .card__front {
-      background: $color3;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color3, 15%),$color3,100, 0.8);
-    }
-  }
-  &:nth-child(4) {
-    .card__front {
-      background: $color5;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color5, 15%),$color5,100, 0.8);
-    }
-  }
-
-  &:nth-child(5) {
-    .card__front {
-      background: $color6;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color6, 15%),$color6,100, 0.8);
-    }
-  }
-  &:nth-child(6) {
-    .card__front {
-      background: $color6;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color6, 15%),$color6,100, 0.8);
-    }
-  }
-
 
   &:last-child {
     margin-right: 0;
@@ -198,7 +136,15 @@ ul {
     }
   }
 }
-
+.system-down {
+  background-color: $color4 ;
+}
+.system-up {
+  background-color: $color2;
+}
+.system-all {
+  background-color: $color1;
+}
 /* Demo */
 main {
   text-align: center;

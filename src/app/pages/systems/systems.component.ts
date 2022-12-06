@@ -30,7 +30,7 @@ export class SystemsComponent implements OnInit{
 
   loadSystems(status:any) {
     this.dataService.getAllSystems().subscribe((res:any) => {
-      this.cards = status ? res.filter((x:any) => (x.isUp === status)) : res;
+      this.cards = status !== null ? res.filter((x:any) => (x.isUp === status)) : res;
     }, error => console.log("error", error))
   }
 
