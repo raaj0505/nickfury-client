@@ -30,7 +30,10 @@ export class SystemCardComponent implements OnInit{
 
   refreshStatus(card:any) {
     this.loading = true;
-    this.refreshSingleSystem(card)
+    //setting 1 sec delay
+    setTimeout(()=> {
+      this.refreshSingleSystem(card)
+    }, 1000)
   }
 
   refreshSingleSystem(card:any) {
@@ -38,9 +41,11 @@ export class SystemCardComponent implements OnInit{
       this.loading = false;
       console.log(res);
       card.branch = res.git.branch;
+      card.lastCheckedAt = new Date().toLocaleTimeString();
     }, err=> {
       card.branch = "Error"
       this.loading = false;
+      card.lastCheckedAt = new Date().toLocaleTimeString();
       console.log(err)
     })
 
