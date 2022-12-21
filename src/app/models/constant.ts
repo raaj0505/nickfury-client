@@ -1,3 +1,3 @@
 export class Constant {
-  public static refreshTimeInSeconds:number = 30;
+  public static refreshTimeInSeconds:number = 120;
 }
